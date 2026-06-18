@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FileClock } from "lucide-react";
-import { AppVisual } from "@/components/app-visual";
 import { StoreButton } from "@/components/store-button";
+import { HeroMedia } from "@/components/hero-media";
 import { HERO_COPY } from "@/lib/content";
 import { PRODUCT } from "@/lib/product";
 import type { Locale } from "@/lib/locale";
@@ -13,7 +13,21 @@ export function HeroSection({ locale }: { locale: Locale }) {
       <div className="section-wrap hero-grid">
         <div>
           <p className="eyebrow">{t(locale, HERO_COPY.eyebrow)}</p>
-          <h1 className="hero-title">{t(locale, HERO_COPY.title)}</h1>
+          <h1 className="hero-title">
+            {locale === "ja" ? (
+              t(locale, HERO_COPY.title)
+            ) : (
+              <>
+                Stop hunting for what{" "}
+                <span className="hero-headline-emphasis">
+                  <span>chang</span>
+                  <span className="hero-headline-blue">e</span>
+                  <span className="hero-headline-red">d</span>
+                </span>{" "}
+                in your drawings.
+              </>
+            )}
+          </h1>
           <p className="hero-lead">{t(locale, HERO_COPY.body)}</p>
 
           <div className="cta-row">
@@ -27,7 +41,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
           <p className="hero-specs">{HERO_COPY.specs.map((spec) => t(locale, spec)).join(" · ")}</p>
         </div>
 
-        <AppVisual locale={locale} />
+        <HeroMedia locale={locale} />
       </div>
     </section>
   );

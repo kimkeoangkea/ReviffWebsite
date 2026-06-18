@@ -13,8 +13,8 @@ export function SupportPage({ locale }: { locale: Locale }) {
       title={locale === "ja" ? "サポート" : "Support"}
       lead={
         locale === "ja"
-          ? "REVIFF の v1 ローンチに向けた問い合わせ、フィードバック、Store 導線です。"
-          : "Support, feedback, and Store paths for the REVIFF v1 launch."
+          ? "REVIFF の問い合わせ、フィードバック、Store 導線です。"
+          : "Support, feedback, and Store paths for REVIFF."
       }
     >
       <div className="feature-grid" style={{ marginTop: 0 }}>
@@ -38,8 +38,8 @@ export function SupportPage({ locale }: { locale: Locale }) {
           <h3>{locale === "ja" ? "実務フィードバックを送る" : "Send workflow feedback"}</h3>
           <p className="card-body">
             {locale === "ja"
-              ? "v1 ローンチ期間中は、実際のレビュー手順に基づくフィードバックを重視します。"
-              : "During the v1 launch, practical feedback from real drawing review workflows is the priority."}
+              ? "実際のレビュー手順に基づくフィードバックを重視します。"
+              : "Practical feedback from real drawing review workflows is the priority."}
           </p>
           <div className="cta-row">
             <a className="focus-ring btn-secondary" href={PRODUCT.feedbackUrl} target="_blank" rel="noreferrer">
@@ -53,8 +53,8 @@ export function SupportPage({ locale }: { locale: Locale }) {
           <h3>{locale === "ja" ? "Store ページを開く" : "Open the Store listing"}</h3>
           <p className="card-body">
             {locale === "ja"
-              ? "公開時は、Microsoft Store がインストールと更新のメイン導線です。"
-              : "At launch, Microsoft Store is the primary path for install and updates."}
+              ? "Microsoft Store がインストールと更新のメイン導線です。"
+              : "Microsoft Store is the primary path for install and updates."}
           </p>
           <div className="cta-row">
             <StoreButton locale={locale} label={{ en: "Open Store", ja: "Store を開く" }} />

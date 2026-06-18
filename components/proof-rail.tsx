@@ -8,7 +8,7 @@ export function ProofRail({ locale }: { locale: Locale }) {
       <div className="section-wrap">
         <p className="section-label">{locale === "ja" ? "Proof" : "Proof"}</p>
         <h2 className="section-title">
-          {locale === "ja" ? "v1 ローンチで伝えるべきこと。" : "What the v1 launch needs to say."}
+          {locale === "ja" ? "導入前に伝わる、REVIFF の基本。" : "The REVIFF basics before teams install."}
         </h2>
         <div className="metric-grid">
           {METRICS.map((metric) => (

@@ -42,8 +42,8 @@ export const SEO = {
     ja: "REVIFF by AEC DX Labs | ローカル PDF・図面比較ツール",
   },
   description: {
-    en: "REVIFF compares revised PDF drawing sets and supported image files locally on Windows. No cloud upload. Microsoft Store install. Free during the v1 launch.",
-    ja: "REVIFF は、改訂 PDF 図面セットと対応画像ファイルを Windows PC 上でローカル比較します。クラウドアップロード不要。Microsoft Store からインストール。v1 ローンチ期間中は無料です。",
+    en: "A 100% local PDF comparison tool for architectural drawing sets. Free on Microsoft Store with no signup, no subscription, no premium feature locked, and no watermark.",
+    ja: "建築図面向けの 100% ローカル PDF 比較ツールです。Microsoft Store で無料。サインアップ不要、サブスク不要、プレミアム機能ロックなし、透かしなし。",
   },
   keywords: [
     "REVIFF",

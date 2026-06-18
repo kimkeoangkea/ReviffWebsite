@@ -6,14 +6,14 @@ export function FeaturesSection({ locale }: { locale: Locale }) {
   return (
     <section className="section">
       <div className="section-wrap">
-        <p className="section-label">V1 Positioning</p>
+        <p className="section-label">Product Focus</p>
         <h2 className="section-title">
-          {locale === "ja" ? "旧ベータ版ではなく、REVIFF として紹介する。" : "Introduce it as REVIFF, not an old beta."}
+          {locale === "ja" ? "REVIFF は、図面変更を見つけるための専用ツール。" : "REVIFF is focused on finding drawing changes."}
         </h2>
         <p className="section-copy">
           {locale === "ja"
             ? "新しいサイトでは、Store 配布、ローカル処理、レビュー用の実務機能を中心に伝えます。"
-            : "The standalone site should move the story from a beta utility to a focused Windows product for AEC revision review."}
+            : "The standalone site presents it as a focused Windows product for AEC revision review: local processing, Store install, and review-ready output."}
         </p>
 
         <div className="feature-grid">

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="128"
+     height="128"
+     viewBox="0 0 128 128"
+     role="img"
+     aria-label="PDFDiff app icon three bars">
+  <path d="M2 4 L22 15 V69 L2 80 Z"
+        fill="#FF5050"
+        transform="translate(30 24) scale(0.8333333333333334 0.9761904761904762)"/>
+  <path d="M2 4 L22 15 V69 L2 80 Z"
+        fill="#BEBEBE"
+        transform="translate(56 18) scale(0.8333333333333334 1.0952380952380953)"/>
+  <path d="M2 4 L22 15 V69 L2 80 Z"
+        fill="#5050FF"
+        transform="translate(82 24) scale(0.8333333333333334 0.9761904761904762)"/>
+</svg>

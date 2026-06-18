@@ -31,7 +31,7 @@ export function DownloadPage({ locale }: { locale: Locale }) {
               <StoreButton
                 locale={locale}
                 label={{ en: "Open Microsoft Store", ja: "Microsoft Store を開く" }}
-                hint={{ en: "Configured by NEXT_PUBLIC_MICROSOFT_STORE_URL", ja: "NEXT_PUBLIC_MICROSOFT_STORE_URL で設定" }}
+                hint={{ en: "Free. No signup. No subscription.", ja: "無料。サインアップ不要。サブスク不要。" }}
               />
             </div>
           </div>
@@ -63,7 +63,7 @@ export function DownloadPage({ locale }: { locale: Locale }) {
         <section className="section">
           <div className="section-wrap">
             <p className="section-label">{locale === "ja" ? "Install Flow" : "Install Flow"}</p>
-            <h2 className="section-title">{locale === "ja" ? "公開時の導線は 3 ステップ。" : "The launch install path is three steps."}</h2>
+            <h2 className="section-title">{locale === "ja" ? "導入は 3 ステップ。" : "Install in three steps."}</h2>
             <div className="step-grid">
               {DOWNLOAD_COPY.steps.map((step, index) => (
                 <article className="step-card" key={step.title.en}>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="128"
+     height="128"
+     viewBox="0 0 128 128"
+     role="img"
+     aria-label="PDFDiff app icon filled badge">
+  <rect x="18" y="18" width="92" height="92" rx="28" fill="#0F172A"/>
+  <path d="M2 4 L22 15 V69 L2 80 Z"
+        fill="#FF5050"
+        transform="translate(34 30) scale(0.75 0.8095238095238095)"/>
+  <path d="M2 4 L22 15 V69 L2 80 Z"
+        fill="#BEBEBE"
+        transform="translate(56 22) scale(0.8333333333333334 0.9761904761904762)"/>
+  <path d="M2 4 L22 15 V69 L2 80 Z"
+        fill="#5050FF"
+        transform="translate(80 30) scale(0.75 0.8095238095238095)"/>
+</svg>

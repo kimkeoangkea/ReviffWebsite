@@ -12,6 +12,7 @@ export interface WorkflowStep {
   title: LocalizedText;
   body: LocalizedText;
   callout: LocalizedText;
+  imageBase: string;
 }
 
 export interface Feature {
@@ -53,16 +54,16 @@ export const HERO_COPY = {
     ja: "建築図面の差分確認を、手元の Windows PC で。",
   },
   body: {
-    en: "Compare revised PDF drawing sets and supported image files on your Windows PC. No cloud upload. Microsoft Store install. Free during the v1 launch.",
-    ja: "改訂 PDF 図面セットと対応画像ファイルを、Windows PC 上で比較できます。クラウドアップロード不要。Microsoft Store からインストール。v1 ローンチ期間中は無料です。",
+    en: "A 100% local PDF comparison tool for architectural drawing sets.",
+    ja: "建築図面向けの 100% ローカル PDF 比較ツールです。",
   },
   primaryCta: {
-    en: "Get it from Microsoft Store",
+    en: "Download Free",
     ja: "Microsoft Store で入手",
   },
   primaryHint: {
-    en: "Store link is configurable before launch",
-    ja: "公開前に Store リンクを差し替え可能",
+    en: "No signup. No subscription.",
+    ja: "サインアップ不要。サブスク不要。",
   },
   secondaryCta: {
     en: "View v1 changelog",
@@ -75,8 +76,8 @@ export const HERO_COPY = {
     { en: "Local processing", ja: "ローカル処理" },
   ] as LocalizedText[],
   visualCaption: {
-    en: "Review Before and After drawings, align mismatched pages, highlight changed regions, and export the result for your team.",
-    ja: "Before / After 図面を確認し、位置ずれを合わせ、変更箇所を可視化して、チーム向けの結果として出力できます。",
+    en: "Split mode supports side-by-side checks, and Diff mode highlights added content in red and removed content in blue.",
+    ja: "分割モードで並列確認し、差分モードで追加を赤・削除を青にハイライト表示します。",
   },
 } as const;
 
@@ -92,11 +93,11 @@ export const METRICS: Metric[] = [
   },
   {
     id: "price",
-    value: { en: "Free during v1", ja: "v1 期間は無料" },
-    label: { en: "Launch pricing", ja: "ローンチ価格" },
+    value: { en: "Free", ja: "無料" },
+    label: { en: "Pricing", ja: "価格" },
     body: {
-      en: "The first Store release is positioned for adoption and feedback.",
-      ja: "最初の Store リリースは、導入とフィードバックを重視しています。",
+      en: "No signup, no subscription, no premium feature locked, no watermark.",
+      ja: "サインアップ不要、サブスク不要、プレミアム機能ロックなし、透かしなし。",
     },
   },
   {
@@ -113,39 +114,33 @@ export const METRICS: Metric[] = [
 export const WORKFLOW_STEPS: WorkflowStep[] = [
   {
     id: "load",
-    title: { en: "1. Load and pair sheets", ja: "1. 読み込みとペア確認" },
+    title: { en: "1. Load & Align (Page Review)", ja: "1. 読み込みとペアリング（ページ確認）" },
     body: {
-      en: "Drop in the Before and After set, then review page pairing, similarity, file type, and sheet size before comparison starts.",
-      ja: "Before / After のセットを読み込み、比較前にページ対応、類似度、ファイル形式、シートサイズを確認します。",
+      en: "Drop in your Before and After PDF sets and arrange the pages to match. Built-in similarity scoring helps you catch sheet mismatches or scale issues before review begins.",
+      ja: "変更前（Before）と変更後（After）の PDF を読み込み、比較するページをペアリングします。類似度スコアにより、レビュー開始前にシートの不一致や尺度のズレを確認できます。",
     },
     callout: { en: "PDF, PNG, JPG, BMP, GIF, TIF", ja: "PDF、PNG、JPG、BMP、GIF、TIF" },
+    imageBase: "/media/workflow-1-loading-pdf",
   },
   {
-    id: "align",
-    title: { en: "2. Align what moved", ja: "2. 位置ずれを合わせる" },
+    id: "diff",
+    title: { en: "2. Compare & Cloud (Diff Mode)", ja: "2. 差分検出と自動マークアップ（比較）" },
     body: {
-      en: "Use auto align, manual point alignment, or partial alignment when revised drawings shifted, rotated, scaled, or moved only in one area.",
-      ja: "図面全体の移動、回転、倍率差、または一部だけの移動に対して、自動位置合わせ、手動点指定、部分位置合わせを使えます。",
+      en: "Spot differences instantly using Split or Diff viewing modes with synchronized zoom and pan. REVIFF detects changed regions and generates Cloud Marks around them.",
+      ja: "分割（Split）および差分（Diff）モードと、同期されたズーム・パンにより、変更箇所を素早く確認できます。REVIFF は変更領域を検出し、その周囲に雲マークを生成します。",
     },
-    callout: { en: "Auto, manual, and partial alignment", ja: "自動・手動・部分位置合わせ" },
+    callout: { en: "Split / Diff / Cloud Marks", ja: "Split / Diff / 雲マーク" },
+    imageBase: "/media/workflow-3-split-mode-cloudmark",
   },
   {
-    id: "review",
-    title: { en: "3. Compare and mark changes", ja: "3. 差分確認とマークアップ" },
+    id: "export",
+    title: { en: "3. Export the Deliverable (Export)", ja: "3. レビュー結果のエクスポート（出力）" },
     body: {
-      en: "Switch between split and diff views, tune compare colors, generate revision clouds, and add annotation layers, labels, shapes, or connectors.",
-      ja: "分割表示と差分表示を切り替え、比較色を調整し、雲マークや注釈レイヤー、ラベル、図形、コネクターを追加できます。",
-    },
-    callout: { en: "Clouds, labels, shapes, connectors", ja: "雲マーク、ラベル、図形、コネクター" },
-  },
-  {
-    id: "deliver",
-    title: { en: "4. Export the review", ja: "4. レビュー結果を書き出す" },
-    body: {
-      en: "Export changed pages to PDF or PNG so the result fits into standard drawing review and Acrobat-based handoff workflows.",
-      ja: "変更ページを PDF または PNG として書き出し、一般的な図面レビューや Acrobat ベースの共有フローに接続できます。",
+      en: "Select changed pages and export the result to PDF or PNG. The output is ready to share with teammates and reviewers.",
+      ja: "変更があったページを選択し、結果を PDF または PNG として出力できます。チームやレビュアーへそのまま共有できる形に整えられます。",
     },
     callout: { en: "PDF / PNG deliverables", ja: "PDF / PNG 出力" },
+    imageBase: "/media/workflow-4-export",
   },
 ];
 
@@ -184,8 +179,8 @@ export const FAQ: FaqItem[] = [
     id: "price",
     question: { en: "Is REVIFF free?", ja: "REVIFF は無料ですか？" },
     answer: {
-      en: "REVIFF is free during the v1 launch so architectural users can try the Store release and send practical workflow feedback.",
-      ja: "REVIFF は v1 ローンチ期間中無料です。建築実務のユーザーに Store 版を試してもらい、実際のワークフローに基づくフィードバックを集めるためです。",
+      en: "Yes. REVIFF is free. No signup, no subscription, no premium feature locked, and no watermark.",
+      ja: "はい。REVIFF は無料です。サインアップ不要、サブスク不要、プレミアム機能ロックなし、透かしなしです。",
     },
   },
   {
@@ -208,8 +203,8 @@ export const FAQ: FaqItem[] = [
     id: "store",
     question: { en: "Why Microsoft Store only?", ja: "なぜ Microsoft Store のみですか？" },
     answer: {
-      en: "The v1 launch uses Microsoft Store distribution to make install, update, and product identity clearer for Windows users.",
-      ja: "v1 ローンチでは、Windows ユーザーにとってインストール、更新、製品識別をわかりやすくするため Microsoft Store 配布を採用します。",
+      en: "Microsoft Store keeps install, updates, and product identity clearer for Windows users.",
+      ja: "Microsoft Store により、Windows ユーザーにとってインストール、更新、製品識別がわかりやすくなります。",
     },
   },
 ];
@@ -295,15 +290,15 @@ export const DOWNLOAD_COPY = {
     ja: "Microsoft Store から REVIFF をインストール",
   },
   body: {
-    en: "The v1 release is distributed through Microsoft Store only. The Store URL is controlled by one launch config value, so the final Partner Center link can be swapped in when it is ready.",
-    ja: "v1 リリースは Microsoft Store のみで配布します。Store URL は 1 つの設定値で管理されるため、Partner Center の最終リンクが準備でき次第差し替えられます。",
+    en: "REVIFF is free on Microsoft Store. No signup, no subscription, no premium feature locked, and no watermark.",
+    ja: "REVIFF は Microsoft Store で無料です。サインアップ不要、サブスク不要、プレミアム機能ロックなし、透かしなしです。",
   },
   steps: [
     {
       title: { en: "Open the Store listing", ja: "Store ページを開く" },
       body: {
-        en: "Use the primary button to open the configured Microsoft Store destination.",
-        ja: "メインボタンから、設定済みの Microsoft Store 宛先を開きます。",
+        en: "Use the primary button to open the Microsoft Store page.",
+        ja: "メインボタンから Microsoft Store ページを開きます。",
       },
     },
     {

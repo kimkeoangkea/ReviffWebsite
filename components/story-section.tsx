@@ -12,7 +12,7 @@ export function StorySection({ locale }: { locale: Locale }) {
             </h2>
             <span className="story-drawing">
               <span>{locale === "ja" ? "Project" : "Project"}</span>
-              <strong>REVIFF / V1</strong>
+              <strong>REVIFF / STORE</strong>
             </span>
           </div>
 
@@ -29,8 +29,8 @@ export function StorySection({ locale }: { locale: Locale }) {
             </p>
             <div className="story-callout">
               {locale === "ja"
-                ? "v1 ローンチでは、無料で試しやすい Store 版として公開し、実務からのフィードバックを次の改善に接続します。"
-                : "For the v1 launch, the site should make adoption easy: Store install, local processing, clear scope, and a feedback path for real drawing-review use."}
+                ? "REVIFF は、無料で使える Store 版として公開し、実務からのフィードバックを次の改善に接続します。"
+                : "REVIFF is free on Microsoft Store, keeps comparison local, and gives drawing-review teams a direct path to send practical feedback."}
             </div>
           </div>
         </div>
