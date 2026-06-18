@@ -18,19 +18,23 @@
   --text-muted: #6f6a63;
   --text-faint: #938c85;
   --accent: #00b894;
-  --accent-dim: rgba(0, 184, 148, 0.14);
+  --accent-dim: rgba(0, 184, 148, 0.16);
   --accent-warm: #d48d00;
   --accent-warm-dim: rgba(212, 141, 0, 0.12);
   --reviff-blue: #5050ff;
   --pdfdiff-blue: #5050ff;
-  --pdfdiff-blue-glow: rgba(80, 80, 255, 0.2);
+  --pdfdiff-blue-soft: rgba(80, 80, 255, 0.14);
+  --pdfdiff-blue-glow: rgba(80, 80, 255, 0.18);
   --red: #dc6b6b;
-  --red-soft: rgba(220, 107, 107, 0.22);
+  --red-soft: rgba(220, 107, 107, 0.14);
   --blue: #4c78e0;
-  --shadow-card: 0 8px 24px rgba(17, 17, 17, 0.1);
-  --shadow-soft: 0 16px 42px rgba(17, 17, 17, 0.14);
-  --texture-line: rgba(17, 17, 17, 0.022);
-  --header-bg: rgba(246, 245, 243, 0.9);
+  --green: #2da05e;
+  --accent-border-strong: rgba(0, 184, 148, 0.42);
+  --accent-warm-border-strong: rgba(212, 141, 0, 0.34);
+  --shadow-card: 0 6px 20px rgba(17, 17, 17, 0.1);
+  --shadow-soft: 0 14px 34px rgba(17, 17, 17, 0.13);
+  --texture-line: rgba(17, 17, 17, 0.02);
+  --header-bg: rgba(246, 245, 243, 0.86);
   --ease: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -54,7 +58,7 @@ body {
   margin: 0;
   background: var(--bg-base);
   color: var(--text-primary);
-  font-family: "Space Grotesk", "Noto Sans JP", system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), var(--font-noto-sans-jp), system-ui, sans-serif;
 }
 
 body::before {
@@ -98,7 +102,11 @@ a {
 }
 
 .font-mono {
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
+}
+
+.font-display {
+  font-family: var(--font-space-grotesk), var(--font-noto-sans-jp), sans-serif;
 }
 
 .focus-ring {
@@ -151,7 +159,7 @@ a {
 
 .brand-kicker {
   display: block;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.56rem;
   letter-spacing: 0.22em;
   line-height: 1;
@@ -181,7 +189,7 @@ a {
   align-items: center;
   border-radius: 6px;
   padding-inline: 0.72rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -209,7 +217,7 @@ a {
   gap: 0.55rem;
   border-radius: 8px;
   padding: 0.55rem 1rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -282,6 +290,13 @@ a {
   place-items: center;
 }
 
+@media (min-width: 640px) {
+  .hero-brand-lockup__mark {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+}
+
 .hero-brand-lockup__mark img {
   width: 100%;
   height: 100%;
@@ -299,7 +314,7 @@ a {
 }
 
 .eyebrow {
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -390,7 +405,7 @@ a {
 
 .hero-specs {
   margin-top: 1.2rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   line-height: 1.7;
@@ -578,7 +593,7 @@ a {
   gap: 1rem;
   border-bottom: 1px solid var(--border-subtle);
   padding: 0.78rem 0.92rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.62rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -632,7 +647,7 @@ a {
   border-radius: 6px;
   background: var(--bg-surface);
   padding: 0.5rem 0.58rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.58rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -667,7 +682,7 @@ a {
   border-radius: 999px;
   background: var(--accent);
   padding: 0.14rem 0.36rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.5rem;
   color: #111111;
 }
@@ -689,7 +704,7 @@ a {
   border-radius: 6px;
   background: var(--bg-card);
   padding: 0.38rem 0.5rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.54rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -753,7 +768,7 @@ a {
   border-radius: 6px;
   background: rgba(255, 249, 229, 0.84);
   padding: 0.38rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.54rem;
   color: var(--text-primary);
 }
@@ -779,7 +794,7 @@ a {
 
 .section-label {
   margin: 0 0 0.6rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -842,7 +857,7 @@ a {
 
 .card-kicker {
   margin-top: 0.6rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.62rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -865,7 +880,7 @@ a {
   border: 1px solid rgba(0, 184, 148, 0.34);
   border-radius: 999px;
   background: var(--accent-dim);
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.68rem;
   color: var(--text-primary);
 }
@@ -882,7 +897,7 @@ a {
   margin-top: 1rem;
   border-left: 3px solid var(--accent);
   padding-left: 0.75rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.68rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -980,7 +995,7 @@ a {
   border-radius: 6px;
   background: var(--bg-surface);
   padding: 0.7rem 0.8rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.72rem;
 }
 
@@ -1058,7 +1073,7 @@ a {
 }
 
 .faq-card__number {
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.74rem;
   color: var(--accent);
 }
@@ -1093,7 +1108,7 @@ a {
   border-radius: 6px;
   background: var(--bg-card);
   padding: 0.45rem 0.62rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.62rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1104,7 +1119,7 @@ a {
   flex-wrap: wrap;
   gap: 0.4rem;
   padding-top: 2rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.66rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1160,7 +1175,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem 1rem;
-  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-family: var(--font-ibm-plex-mono), var(--font-noto-sans-jp), monospace;
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;

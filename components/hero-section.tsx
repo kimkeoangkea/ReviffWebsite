@@ -40,7 +40,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
         <div className="hero-copy-stack">
           <div className="hero-brand-lockup">
             <span className="hero-brand-lockup__mark">
-              <ReviffMark />
+              <ReviffMark size={128} />
             </span>
             <div className="hero-brand-lockup__meta">
               <span className="hero-brand-lockup__rule" />
