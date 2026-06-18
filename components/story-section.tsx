@@ -2,17 +2,17 @@ import type { Locale } from "@/lib/locale";
 
 export function StorySection({ locale }: { locale: Locale }) {
   return (
-    <section className="section">
+    <section className="section maker-section">
       <div className="section-wrap">
         <div className="story-panel">
           <div className="story-side">
             <p className="section-label">Maker Context</p>
             <h2 className="section-title">
-              {locale === "ja" ? "建築実務から生まれた小さな道具。" : "A focused tool from architectural practice."}
+              {locale === "ja" ? "The Weekend DX Experiment" : "The Weekend DX Experiment"}
             </h2>
             <span className="story-drawing">
-              <span>{locale === "ja" ? "Project" : "Project"}</span>
-              <strong>REVIFF / STORE</strong>
+              <span>{locale === "ja" ? "Drawing No." : "Drawing No."}</span>
+              <strong>AEC-DX-001</strong>
             </span>
           </div>
 

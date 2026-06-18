@@ -5,26 +5,24 @@ import { t } from "@/lib/locale";
 
 export function WorkflowSection({ locale }: { locale: Locale }) {
   return (
-    <section id="workflow" className="section">
+    <section id="workflow" className="workflow-section section">
       <div className="section-wrap">
         <p className="section-label">Workflow</p>
         <h2 className="section-title">
-          {locale === "ja" ? "図面レビューを止めない 3 ステップ。" : "Three connected steps for drawing review."}
+          {locale === "ja" ? "実務に即した3ステップのレビュー・ワークフロー" : "Three connected steps for practical drawing review"}
         </h2>
         <p className="section-copy">
           {locale === "ja"
-            ? "読み込み、位置合わせ、比較、出力までを 1 つの作業画面で進められるように構成します。"
-            : "REVIFF keeps the review loop tight: load the drawings, compare the changes, and export the result."}
+            ? "インポート、比較、判断の流れがつながり、ツールを切り替えることなくレビューが完結します。"
+            : "The flow keeps review moving: import, compare, and decide - without switching between tools."}
         </p>
 
         <div className="workflow-story-grid">
           {WORKFLOW_STEPS.map((step, index) => (
-            <article key={step.id} className={`workflow-story ${index % 2 === 1 ? "workflow-story--reverse" : ""}`}>
+            <article key={step.id} className={`workflow-story ${index % 2 === 1 ? "workflow-story--image-left" : ""}`}>
               <div className="workflow-story__copy">
-                <span className="step-card__number">{String(index + 1).padStart(2, "0")}</span>
                 <h3>{t(locale, step.title)}</h3>
                 <p className="card-body">{t(locale, step.body)}</p>
-                <p className="step-card__callout">{t(locale, step.callout)}</p>
               </div>
               <div className="workflow-story__image">
                 <Image
@@ -33,6 +31,7 @@ export function WorkflowSection({ locale }: { locale: Locale }) {
                   width={1280}
                   height={840}
                   sizes="(min-width: 768px) 58vw, calc(100vw - 2.5rem)"
+                  unoptimized
                 />
               </div>
             </article>

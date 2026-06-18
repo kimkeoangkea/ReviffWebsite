@@ -54,8 +54,8 @@ export const HERO_COPY = {
     ja: "建築図面の差分確認を、手元の Windows PC で。",
   },
   body: {
-    en: "A 100% local PDF comparison tool for architectural drawing sets.",
-    ja: "建築図面向けの 100% ローカル PDF 比較ツールです。",
+    en: "A 100% local PDF comparison tool for architectural drawing sets. No cloud upload, no signup, no subscription.",
+    ja: "建築図面向けの 100% ローカル PDF 比較ツールです。クラウドアップロード不要、サインアップ不要、サブスク不要。",
   },
   primaryCta: {
     en: "Download Free",
@@ -102,11 +102,11 @@ export const METRICS: Metric[] = [
   },
   {
     id: "formats",
-    value: { en: "PDF + images", ja: "PDF + 画像" },
-    label: { en: "Input support", ja: "対応ファイル" },
+    value: { en: "Store install", ja: "Store 版" },
+    label: { en: "Windows path", ja: "Windows 導線" },
     body: {
-      en: "Use PDFs or supported raster image files in the same review workflow.",
-      ja: "PDF と対応ラスター画像を同じレビュー手順で扱えます。",
+      en: "Microsoft Store is the install and update path.",
+      ja: "Microsoft Store がインストールと更新の導線です。",
     },
   },
 ];
