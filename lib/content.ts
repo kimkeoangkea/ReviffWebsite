@@ -159,8 +159,8 @@ export const FEATURES: Feature[] = [
     eyebrow: { en: "Review workspace", ja: "レビュー作業画面" },
     title: { en: "More than red and blue pixels.", ja: "赤青の差分表示だけで終わらない。" },
     body: {
-      en: "The v1 workflow adds alignment controls, richer cloud styling, compare color presets, layer organization, annotation boxes, shape elements, and connector styling for review-ready output.",
-      ja: "v1 では、位置合わせ、雲マークのスタイル、比較色プリセット、レイヤー整理、注釈ボックス、図形要素、コネクター設定までレビュー用の出力を整えられます。",
+      en: "The v1 workflow adds alignment controls, expanded cloud mark styling, compare color presets, and review-ready PDF/PNG output.",
+      ja: "v1 では、位置合わせ、雲マークのスタイル、比較色プリセット、レビュー用の PDF/PNG 出力を整えられます。",
     },
   },
   {
@@ -216,8 +216,8 @@ export const CHANGELOG: ChangelogEntry[] = [
     date: "2026-06-18",
     label: { en: "First Store release", ja: "初回 Store リリース" },
     summary: {
-      en: "The first REVIFF release moves the drawing comparison workflow into a Store-first Windows app with stronger alignment, review, annotation, and update foundations.",
-      ja: "最初の REVIFF リリースでは、図面比較ワークフローを Store 優先の Windows アプリへ移行し、位置合わせ、レビュー、注釈、アップデート基盤を強化しました。",
+      en: "The first REVIFF release moves the drawing comparison workflow into a Store-first Windows app with stronger alignment, comparison, cloud mark styling, and update foundations.",
+      ja: "最初の REVIFF リリースでは、図面比較ワークフローを Store 優先の Windows アプリへ移行し、位置合わせ、比較、雲マークのスタイル、アップデート基盤を強化しました。",
     },
     highlights: [
       { value: { en: "1.0.0.0", ja: "1.0.0.0" }, label: { en: "Release version", ja: "リリースバージョン" } },
@@ -263,13 +263,9 @@ export const CHANGELOG: ChangelogEntry[] = [
         ],
       },
       {
-        title: { en: "Review markup", ja: "レビュー用マークアップ" },
+        title: { en: "Cloud marks and export", ja: "雲マークと出力" },
         tone: "warm",
         items: [
-          {
-            en: "Added richer layer organization, annotation boxes, shape elements, connectors, and connector styling.",
-            ja: "レイヤー整理、注釈ボックス、図形要素、コネクター、コネクターのスタイル設定を強化しました。",
-          },
           {
             en: "Expanded cloud mark appearance controls for stroke, fill, opacity, and change-type color scope.",
             ja: "線、塗り、透明度、変更タイプ別の色範囲など、雲マークの外観設定を拡張しました。",
@@ -277,6 +273,151 @@ export const CHANGELOG: ChangelogEntry[] = [
           {
             en: "Kept export focused on review-ready PDF and PNG deliverables.",
             ja: "レビュー結果として扱いやすい PDF と PNG 出力に引き続き対応しています。",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "beta-v0-9-0",
+    version: "BETA v0.9.0",
+    date: "2026-03-19",
+    label: { en: "First public beta", ja: "初回パブリックベータ" },
+    summary: {
+      en: "First public beta release, originally published as PDF Diff. This version introduced the core local workflow for loading two drawing sets, comparing pages, reviewing detected changes, and exporting results.",
+      ja: "PDF Diff として公開した初回パブリックベータです。2 つの図面セットを読み込み、ページを比較し、検出された変更を確認し、結果を書き出すまでのローカル完結ワークフローを導入しました。",
+    },
+    highlights: [
+      { value: { en: "Local-first", ja: "ローカル完結" }, label: { en: "Drawing set comparison", ja: "図面セット比較" } },
+      { value: { en: "Split / Diff", ja: "分割 / 差分" }, label: { en: "Review modes", ja: "レビュー表示" } },
+      { value: { en: "Cloud Marks", ja: "雲マーク" }, label: { en: "Beta markup workflow", ja: "ベータのマークアップ機能" } },
+      { value: { en: "PDF + PNG", ja: "PDF + PNG" }, label: { en: "Export output", ja: "書き出し形式" } },
+      { value: { en: "EN / JA", ja: "英語 / 日本語" }, label: { en: "Language support", ja: "言語対応" } },
+    ],
+    sections: [
+      {
+        title: { en: "Core comparison", ja: "比較の基本機能" },
+        tone: "blue",
+        items: [
+          {
+            en: "Compare Before and After PDF drawing sets locally.",
+            ja: "Before / After の PDF 図面セットをローカル環境で比較できるようにしました。",
+          },
+          {
+            en: "Compare selected pages or the full drawing set.",
+            ja: "選択したページのみ、または図面セット全体を比較できるようにしました。",
+          },
+          {
+            en: "Review page thumbnails with similarity scoring to identify changed sheets faster.",
+            ja: "類似度スコア付きのサムネイルで、変更のあるシートを素早く特定できるようにしました。",
+          },
+          {
+            en: "Detect page-size mismatches and apply preview size matching when sheets do not align cleanly.",
+            ja: "ページサイズの不一致を検出し、図面の位置やサイズが合っていない場合でもプレビュー上でサイズ合わせできるようにしました。",
+          },
+        ],
+      },
+      {
+        title: { en: "Reviewing changes", ja: "変更レビュー" },
+        tone: "accent",
+        items: [
+          {
+            en: "Use Split and Diff viewing modes for side-by-side review and change-focused inspection.",
+            ja: "分割モードと差分モードを使い分けて、左右に並べての比較や、差分に特化したレビューを行えるようにしました。",
+          },
+          {
+            en: "Use synced zoom and pan, fit-to-screen, and full-screen controls for closer review.",
+            ja: "同期ズーム・パン、画面に合わせる表示、全画面表示で細部まで確認できるようにしました。",
+          },
+          {
+            en: "Switch between Before, After, and Result layers while working in Diff view.",
+            ja: "Diff 表示中に Before / After / Result レイヤーを切り替えられるようにしました。",
+          },
+          {
+            en: "Adjust compare colors with presets and custom color controls.",
+            ja: "プリセットとカスタム設定で比較色を調整できるようにしました。",
+          },
+          {
+            en: "Move through changed pages faster with built-in keyboard shortcuts.",
+            ja: "組み込みのキーボードショートカットで変更ページを素早く移動できるようにしました。",
+          },
+        ],
+      },
+      {
+        title: { en: "Diff markers and cloud marks", ja: "差分マーカーと雲マーク" },
+        tone: "warm",
+        items: [
+          {
+            en: "Generate cloud marks for the current page or all selected changed pages.",
+            ja: "現在のページ、または選択した変更ページすべてに雲マークを生成できるようにしました。",
+          },
+          {
+            en: "Browse detected regions more easily from the dedicated Changes tab.",
+            ja: "Changes タブから検出領域を見やすく確認できるようにしました。",
+          },
+          {
+            en: "Merge, break apart, move, and resize cloud marks during review.",
+            ja: "レビュー中に雲マークの結合、分割、移動、サイズ変更ができるようにしました。",
+          },
+          {
+            en: "Undo and redo cloud mark edits while refining change areas.",
+            ja: "変更範囲の調整中に、雲マーク編集の元に戻す・やり直しができるようにしました。",
+          },
+          {
+            en: "Adjust cloud numbering and size controls for clearer review output.",
+            ja: "レビュー結果を見やすくするために、雲マークの番号やサイズを調整できるようにしました。",
+          },
+        ],
+      },
+      {
+        title: { en: "Export and workflow polish", ja: "書き出しとワークフロー改善" },
+        tone: "default",
+        items: [
+          {
+            en: "Export results to PDF or PNG.",
+            ja: "結果を PDF または PNG に書き出せるようにしました。",
+          },
+          {
+            en: "Export all pages, clear selections, or export changed pages only.",
+            ja: "全ページ、選択したページ、または変更があったページのみの書き出しに対応しました。",
+          },
+          {
+            en: "Create export-ready output with cloud mark overlays and automatic file naming.",
+            ja: "雲マークをオーバーレイ表示した状態で、ファイル名を自動付与して書き出せるようにしました。",
+          },
+          {
+            en: "Track longer jobs with progress feedback and cancellation support.",
+            ja: "進捗バーの表示とキャンセル機能により、時間のかかる処理の状況を確認できるようにしました。",
+          },
+          {
+            en: "Review larger drawing sets more smoothly during page-to-page navigation.",
+            ja: "大きな図面セットでもページ移動をよりスムーズに行えるようにしました。",
+          },
+        ],
+      },
+      {
+        title: { en: "Settings and utility", ja: "設定とユーティリティ" },
+        tone: "blue",
+        items: [
+          {
+            en: "Save preferences for viewer mode, default cloud mark behavior, and language.",
+            ja: "ビューモード、雲マークのデフォルト設定、言語設定を保存できるようにしました。",
+          },
+          {
+            en: "Use the app in English or Japanese.",
+            ja: "アプリを英語と日本語で使えるようにしました。",
+          },
+          {
+            en: "Open the Help & Shortcuts panel for quicker onboarding.",
+            ja: "Help & Shortcuts パネルで素早く使い始められるようにしました。",
+          },
+          {
+            en: "Access the Settings and About dialog for version and product details.",
+            ja: "Settings ダイアログや About ダイアログからバージョン情報や製品情報を確認できるようにしました。",
+          },
+          {
+            en: "View application logs and third-party notices from built-in utility screens.",
+            ja: "ユーティリティ画面から、アプリのログやサードパーティライセンス情報を確認できるようにしました。",
           },
         ],
       },
