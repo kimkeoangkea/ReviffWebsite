@@ -1,0 +1,13 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F6F5F3"/>
+  <path d="M0 64H1200M0 128H1200M0 192H1200M0 256H1200M0 320H1200M0 384H1200M0 448H1200M0 512H1200M0 576H1200" stroke="#111111" stroke-opacity=".04"/>
+  <path d="M64 0V630M128 0V630M192 0V630M256 0V630M320 0V630M384 0V630M448 0V630M512 0V630M576 0V630M640 0V630M704 0V630M768 0V630M832 0V630M896 0V630M960 0V630M1024 0V630M1088 0V630M1152 0V630" stroke="#111111" stroke-opacity=".04"/>
+  <rect x="88" y="86" width="1024" height="458" rx="20" fill="#E8E6E2" stroke="#111111" stroke-opacity=".14"/>
+  <path d="M164 173h184c66 0 112 41 112 101 0 43-23 76-62 91l78 130h-94l-65-112h-79v112h-74V173Z" stroke="#111111" stroke-width="24" stroke-linejoin="round"/>
+  <path d="M238 250h92c28 0 44 13 44 35s-16 35-44 35h-92v-70Z" fill="#00B894"/>
+  <text x="552" y="246" fill="#111111" font-family="Arial, sans-serif" font-size="78" font-weight="800">REVIFF</text>
+  <text x="556" y="310" fill="#3F444D" font-family="Arial, sans-serif" font-size="34">Local PDF and drawing comparison</text>
+  <text x="556" y="365" fill="#3F444D" font-family="Arial, sans-serif" font-size="26">Microsoft Store install · No cloud upload · v1.0.0.0</text>
+  <rect x="556" y="416" width="278" height="54" rx="8" fill="#00B894"/>
+  <text x="584" y="452" fill="#111111" font-family="Arial, sans-serif" font-size="20" font-weight="700">BY AEC DX LABS</text>
+</svg>
