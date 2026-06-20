@@ -11,7 +11,9 @@ export const PRODUCT = {
   storeUrl:
     process.env.NEXT_PUBLIC_MICROSOFT_STORE_URL ??
     "https://apps.microsoft.com/detail/9NXXXXXXXXXX",
-  feedbackUrl: process.env.NEXT_PUBLIC_FEEDBACK_URL ?? "https://forms.office.com/",
+  feedbackUrl:
+    process.env.NEXT_PUBLIC_FEEDBACK_URL ??
+    "https://docs.google.com/forms/d/e/1FAIpQLSeMMP2qF1hmb0sEt3IOFetuyUciCNjrxQSjEx4Nt_4449Dw2g/viewform?usp=dialog",
   supportEmail: process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "hello@aecdxlabs.com",
   routes: {
     home: "/",
@@ -64,6 +66,7 @@ export interface NavItem {
 
 export const NAV_ITEMS: NavItem[] = [
   { id: "download", label: { en: "Download", ja: "ダウンロード" }, href: PRODUCT.routes.download },
+  { id: "why-free", label: { en: "Why Free", ja: "無料の理由" }, href: "/#why-its-free" },
   { id: "changelog", label: { en: "Changelog", ja: "更新履歴" }, href: PRODUCT.routes.changelog },
   { id: "support", label: { en: "Support", ja: "サポート" }, href: PRODUCT.routes.support },
   { id: "privacy", label: { en: "Privacy", ja: "プライバシー" }, href: PRODUCT.routes.privacy },

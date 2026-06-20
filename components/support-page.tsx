@@ -35,17 +35,22 @@ export function SupportPage({ locale }: { locale: Locale }) {
 
         <article className="feature-card">
           <p className="card-kicker"><MessageSquareText size={16} /> Feedback</p>
-          <h3>{locale === "ja" ? "実務フィードバックを送る" : "Send workflow feedback"}</h3>
+          <h3>{locale === "ja" ? "フィードバックとお問い合わせ" : "Feedback and contact"}</h3>
           <p className="card-body">
             {locale === "ja"
-              ? "実際のレビュー手順に基づくフィードバックを重視します。"
-              : "Practical feedback from real drawing review workflows is the priority."}
+              ? "修正したい点、ツールで解決できそうなワークフローの課題、または一般的なお問い合わせがあれば、フォームからお送りください。ボタンを押すと Google フォームが開きます。"
+              : "Found something worth fixing? Have a workflow problem that a tool could solve? Or just want to get in touch? Use the form to share feedback on any AEC DX Labs tool, suggest ideas, or send a general message. The button opens a Google Form."}
           </p>
           <div className="cta-row">
             <a className="focus-ring btn-secondary" href={PRODUCT.feedbackUrl} target="_blank" rel="noreferrer">
-              {locale === "ja" ? "フォームを開く" : "Open form"}
+              {locale === "ja" ? "フィードバックを送る・問い合わせる" : "Send feedback or get in touch"}
             </a>
           </div>
+          <p className="card-body">
+            {locale === "ja"
+              ? "Google フォームで開きます。100% 無料。AEC DX Labs は、AEC コミュニティ向けの focused workflow tools を作る個人ラボです。"
+              : "Opens Google Forms. 100% free. AEC DX Labs is a personal lab building focused workflow tools for the AEC community."}
+          </p>
         </article>
 
         <article className="feature-card">

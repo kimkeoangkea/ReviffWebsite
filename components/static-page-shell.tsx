@@ -11,7 +11,7 @@ interface StaticPageShellProps {
   path: string;
   eyebrow: string;
   title: string;
-  lead: string;
+  lead?: string;
   children: ReactNode;
 }
 
@@ -33,7 +33,7 @@ export function StaticPageShell({ locale, path, eyebrow, title, lead, children }
           <div className="section-wrap">
             <p className="eyebrow">{eyebrow}</p>
             <h1 className="page-title">{title}</h1>
-            <p className="hero-lead">{lead}</p>
+            {lead ? <p className="hero-lead">{lead}</p> : null}
           </div>
         </section>
 

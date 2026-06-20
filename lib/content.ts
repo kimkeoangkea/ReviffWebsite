@@ -223,34 +223,16 @@ export const CHANGELOG: ChangelogEntry[] = [
       { value: { en: "1.0.0.0", ja: "1.0.0.0" }, label: { en: "Release version", ja: "リリースバージョン" } },
       { value: { en: "Store/MSIX", ja: "Store/MSIX" }, label: { en: "Distribution", ja: "配布形式" } },
       { value: { en: "PDF + images", ja: "PDF + 画像" }, label: { en: "Input scope", ja: "入力対応" } },
-      { value: { en: "Alignment", ja: "位置合わせ" }, label: { en: "Auto / manual / partial", ja: "自動・手動・部分" } },
+      { value: { en: "Alignment", ja: "位置合わせ" }, label: { en: "Auto / partial", ja: "自動・部分" } },
     ],
     sections: [
-      {
-        title: { en: "Store and Windows integration", ja: "Store と Windows 連携" },
-        tone: "accent",
-        items: [
-          {
-            en: "Prepared Microsoft Store/MSIX packaging for the v1.0.0.0 release.",
-            ja: "v1.0.0.0 リリース向けに Microsoft Store/MSIX パッケージを準備しました。",
-          },
-          {
-            en: "Added supported-file registration so Windows can offer REVIFF for PDFs and supported images.",
-            ja: "PDF と対応画像に対して Windows から REVIFF を選べるよう、対応ファイル登録を追加しました。",
-          },
-          {
-            en: "Added a signed remote update-gate foundation for future update guidance.",
-            ja: "今後のアップデート案内に向けて、署名付きリモート更新ゲートの基盤を追加しました。",
-          },
-        ],
-      },
       {
         title: { en: "Alignment and comparison", ja: "位置合わせと比較" },
         tone: "blue",
         items: [
           {
-            en: "Added auto alignment, manual point alignment, and partial alignment for shifted drawing content.",
-            ja: "移動した図面内容に対応するため、自動位置合わせ、手動点指定、部分位置合わせを追加しました。",
+            en: "Added auto alignment and partial alignment for shifted drawing content.",
+            ja: "移動した図面内容に対応するため、自動位置合わせと部分位置合わせを追加しました。",
           },
           {
             en: "Improved structural raster preprocessing and diff refresh handling for aligned pages.",

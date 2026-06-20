@@ -9,11 +9,6 @@ export function PrivacyPage({ locale }: { locale: Locale }) {
       path={PRODUCT.routes.privacy}
       eyebrow="Privacy"
       title={locale === "ja" ? "プライバシー" : "Privacy"}
-      lead={
-        locale === "ja"
-          ? "REVIFF のサイトとアプリで扱うデータの基本方針です。"
-          : "A plain-language privacy summary for the REVIFF website and app."
-      }
     >
       <div className="story-body">
         <h2>{locale === "ja" ? "ローカル処理" : "Local processing"}</h2>

@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/hero-section";
 import { ProofRail } from "@/components/proof-rail";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { StorySection } from "@/components/story-section";
+import { WhyFreeSection } from "@/components/why-free-section";
 import { WorkflowSection } from "@/components/workflow-section";
 import type { Locale } from "@/lib/locale";
 
@@ -18,7 +18,7 @@ export function LandingPage({ locale }: { locale: Locale }) {
         <div className="section-divider"><div className="section-divider__line" /></div>
         <ProofRail locale={locale} />
         <div className="section-divider"><div className="section-divider__line" /></div>
-        <StorySection locale={locale} />
+        <WhyFreeSection locale={locale} />
         <div className="section-divider"><div className="section-divider__line" /></div>
         <FaqSection locale={locale} />
       </main>
