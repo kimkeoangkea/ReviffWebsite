@@ -947,10 +947,44 @@ a {
   box-shadow: var(--shadow-card), 0 18px 40px rgba(17, 17, 17, 0.1);
 }
 
-.workflow-story__image img {
+.workflow-story__image img,
+.workflow-story__image video {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.feature-badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.feature-badge--blue {
+  background: var(--pdfdiff-blue-soft);
+  color: var(--reviff-blue);
+}
+
+.feature-badge--amber {
+  background: var(--accent-warm-dim);
+  color: var(--accent-warm);
+}
+
+.feature-badge--green {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+.feature-subline {
+  margin: 0.2rem 0 0.75rem;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
 .quick-answer-grid {
