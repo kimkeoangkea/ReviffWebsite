@@ -165,7 +165,7 @@ export const FEATURE_SHOWCASE: FeatureShowcase[] = [
       en: "When a diff reveals misaligned pages, hit Auto-align and REVIFF corrects scale and offset in one click — then re-runs the comparison cleanly.",
       ja: "差分確認でズレを発見したら、自動位置合わせを実行。スケール・オフセットを補正して、そのまま再比較まで完結します。",
     },
-    videoSrc: "/media/1. auto-align.mp4",
+    videoSrc: "/media/1.%20auto-align.mp4",
   },
   {
     id: "partial-align",
@@ -177,7 +177,7 @@ export const FEATURE_SHOWCASE: FeatureShowcase[] = [
       en: "Select a region and realign just that area independently. Works when different parts of a sheet were revised at different scales or positions.",
       ja: "補正したい範囲を選択して、その領域だけを独立して位置合わせできます。シートの異なる箇所が別々に改訂された図面にも対応。",
     },
-    videoSrc: "/media/2. partial align.mp4",
+    videoSrc: "/media/2.%20partial%20align.mp4",
   },
   {
     id: "cloudmark",
@@ -189,7 +189,7 @@ export const FEATURE_SHOWCASE: FeatureShowcase[] = [
       en: "REVIFF detects modified regions and draws cloud marks around them — the standard engineering annotation. Nothing slips through. Export is ready to hand off.",
       ja: "REVIFF が変更領域を検出し、建築・建設図面で標準的な雲マークを自動で描画。見落としなく、そのまま提出できる形で出力されます。",
     },
-    videoSrc: "/media/3. cloudmark.mp4",
+    videoSrc: "/media/3.%20cloudmark.mp4",
   },
 ];
 

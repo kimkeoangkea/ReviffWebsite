@@ -1,6 +1,33 @@
+"use client";
+
+import { useState } from "react";
 import { FEATURE_SHOWCASE } from "@/lib/content";
 import type { Locale } from "@/lib/locale";
 import { t } from "@/lib/locale";
+
+function FeatureVideo({ src }: { src: string }) {
+  const [errored, setErrored] = useState(false);
+
+  if (errored) return null;
+
+  return (
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+      disablePictureInPicture
+      disableRemotePlayback
+      controlsList="nodownload nofullscreen noplaybackrate noremoteplayback"
+      tabIndex={-1}
+      aria-hidden="true"
+      onError={() => setErrored(true)}
+    >
+      <source src={src} type="video/mp4" />
+    </video>
+  );
+}
 
 export function WorkflowSection({ locale }: { locale: Locale }) {
   return (
@@ -30,20 +57,7 @@ export function WorkflowSection({ locale }: { locale: Locale }) {
                 <p className="card-body">{t(locale, feature.body)}</p>
               </div>
               <div className="workflow-story__image">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  controls={false}
-                  disablePictureInPicture
-                  disableRemotePlayback
-                  tabIndex={-1}
-                  aria-hidden="true"
-                >
-                  <source src={feature.videoSrc} type="video/mp4" />
-                </video>
+                <FeatureVideo src={feature.videoSrc} />
               </div>
             </article>
           ))}
