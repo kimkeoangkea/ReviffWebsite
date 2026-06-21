@@ -4,6 +4,8 @@ import { IBM_Plex_Mono, Noto_Sans_JP, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import "@/app/globals.css";
 import { PRODUCT, SEO } from "@/lib/product";
+import { JsonLd } from "@/components/json-ld";
+import { organizationSchema, websiteSchema } from "@/lib/structured-data";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -43,6 +45,7 @@ export const metadata: Metadata = {
     languages: {
       en: "/",
       ja: "/ja",
+      "x-default": "/",
     },
   },
   openGraph: {
@@ -51,14 +54,11 @@ export const metadata: Metadata = {
     url: PRODUCT.siteUrl,
     title: SEO.title.en,
     description: SEO.description.en,
-    images: [
-      {
-        url: "/og/reviff-og.svg",
-        width: 1200,
-        height: 630,
-        alt: "REVIFF by AEC DX Labs product preview",
-      },
-    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SEO.title.en,
+    description: SEO.description.en,
   },
 };
 
@@ -71,14 +71,14 @@ export const viewport: Viewport = {
   ],
 };
 
-const themeInitScript = `(function(){try{var s=localStorage.getItem('reviff-theme');var t=s==='light'||s==='dark'?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}catch(e){document.documentElement.setAttribute('data-theme','light');}})();`;
+const themeInitScript = `(function(){try{var p=location.pathname;if(p==='/ja'||p.indexOf('/ja/')===0){document.documentElement.lang='ja';}var s=localStorage.getItem('reviff-theme');var t=s==='light'||s==='dark'?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}catch(e){document.documentElement.setAttribute('data-theme','light');}})();`;
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
       <body className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} ${notoSansJp.variable}`}>
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <JsonLd data={[organizationSchema(), websiteSchema("en")]} />
         {children}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-YV1LWREYY5"

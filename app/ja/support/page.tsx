@@ -1,19 +1,27 @@
 import type { Metadata } from "next";
 import { SupportPage } from "@/components/support-page";
+import { JsonLd } from "@/components/json-ld";
 import { PRODUCT } from "@/lib/product";
+import { buildPageMetadata } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
+  locale: "ja",
+  route: PRODUCT.routes.support,
   title: "サポート",
   description: "REVIFF by AEC DX Labs のサポートとフィードバック導線です。",
-  alternates: {
-    canonical: `/ja${PRODUCT.routes.support}`,
-    languages: {
-      en: PRODUCT.routes.support,
-      ja: `/ja${PRODUCT.routes.support}`,
-    },
-  },
-};
+});
 
 export default function JapaneseSupportRoute() {
-  return <SupportPage locale="ja" />;
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: PRODUCT.name, path: "/ja" },
+          { name: "サポート", path: `/ja${PRODUCT.routes.support}` },
+        ])}
+      />
+      <SupportPage locale="ja" />
+    </>
+  );
 }

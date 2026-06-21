@@ -1,0 +1,38 @@
+# REVIFF
+
+> REVIFF is a free, 100% local PDF and drawing comparison desktop app for architects and AEC teams, published by AEC DX Labs. It compares revised drawing sets entirely on the user's Windows PC — no cloud upload, no signup, no subscription, no watermark.
+
+## What it is
+- **Product:** REVIFF
+- **Publisher:** AEC DX Labs
+- **Platform:** Windows 10 (version 1809 or newer, 64-bit) and Windows 11
+- **Price:** Free. No signup, no subscription, no premium feature locked, no watermark.
+- **Distribution:** Microsoft Store
+- **Privacy:** Comparison runs locally. Drawings never leave the workstation; there is no cloud dependency in the review path.
+- **Hardware:** CPU optimized. No dedicated graphics hardware required.
+
+## Supported file types
+PDF plus PNG, JPG, JPEG, BMP, GIF, TIF, and TIFF images.
+
+## Key features
+- Split mode: view two drawing revisions side by side.
+- Diff mode: highlight what changed between revisions.
+- Cloud Marks: automatic detection of revision cloud marks.
+- Auto-align and partial align: align pages and regions for accurate comparison.
+
+## Common questions
+- **Is REVIFF free?** Yes. No signup, no subscription, no premium feature locked, and no watermark.
+- **Does REVIFF upload drawings?** No. The comparison workflow runs locally on your Windows PC.
+- **What file types can it compare?** PDF and common image formats (PNG, JPG, JPEG, BMP, GIF, TIF, TIFF).
+- **Why Microsoft Store only?** It keeps install, updates, and product identity clearer for Windows users.
+
+## Links
+- Home (English): https://reviff.com/
+- Home (Japanese): https://reviff.com/ja
+- Download: https://reviff.com/download
+- Changelog: https://reviff.com/changelog
+- Privacy: https://reviff.com/privacy
+- Support: https://reviff.com/support
+
+## Contact
+- Email: hello@aecdxlabs.com

@@ -9,6 +9,12 @@ export const PRODUCT = {
   siteUrl,
   releaseDate: "2026-06-18",
   storeAvailable: false,
+  tagline: {
+    en: "Local PDF & drawing comparison for architects",
+    ja: "建築のためのローカル PDF・図面比較",
+  },
+  // External profiles for Organization/WebSite schema (sameAs). Add when available.
+  sameAs: [] as readonly string[],
   storeUrl:
     process.env.NEXT_PUBLIC_MICROSOFT_STORE_URL ??
     "https://apps.microsoft.com/detail/9NP4KTH0HHHJ",
