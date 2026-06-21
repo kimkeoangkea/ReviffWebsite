@@ -5,10 +5,16 @@ import { FEATURE_SHOWCASE } from "@/lib/content";
 import type { Locale } from "@/lib/locale";
 import { t } from "@/lib/locale";
 
-function FeatureVideo({ src }: { src: string }) {
+function FeatureVideo({ src, srcFallback, poster }: {
+  src: string;
+  srcFallback: string;
+  poster: string;
+}) {
   const [errored, setErrored] = useState(false);
 
-  if (errored) return null;
+  if (errored) {
+    return <img src={poster} alt="" style={{ display: "block", width: "100%", height: "auto" }} />;
+  }
 
   return (
     <video
@@ -17,6 +23,7 @@ function FeatureVideo({ src }: { src: string }) {
       loop
       playsInline
       preload="auto"
+      poster={poster}
       disablePictureInPicture
       disableRemotePlayback
       controlsList="nodownload nofullscreen noplaybackrate noremoteplayback"
@@ -24,7 +31,8 @@ function FeatureVideo({ src }: { src: string }) {
       aria-hidden="true"
       onError={() => setErrored(true)}
     >
-      <source src={src} type="video/mp4" />
+      <source src={src} type='video/mp4; codecs="av01.0.08M.08"' />
+      <source src={srcFallback} type='video/mp4; codecs="avc1.64001F"' />
     </video>
   );
 }
@@ -57,7 +65,11 @@ export function WorkflowSection({ locale }: { locale: Locale }) {
                 <p className="card-body">{t(locale, feature.body)}</p>
               </div>
               <div className="workflow-story__image">
-                <FeatureVideo src={feature.videoSrc} />
+                <FeatureVideo
+                  src={feature.videoSrc}
+                  srcFallback={feature.videoSrcFallback}
+                  poster={feature.posterSrc}
+                />
               </div>
             </article>
           ))}

@@ -152,6 +152,8 @@ export interface FeatureShowcase {
   subline: LocalizedText;
   body: LocalizedText;
   videoSrc: string;
+  videoSrcFallback: string;
+  posterSrc: string;
 }
 
 export const FEATURE_SHOWCASE: FeatureShowcase[] = [
@@ -166,6 +168,8 @@ export const FEATURE_SHOWCASE: FeatureShowcase[] = [
       ja: "差分確認でズレを発見したら、自動位置合わせを実行。スケール・オフセットを補正して、そのまま再比較まで完結します。",
     },
     videoSrc: "/media/1.%20auto-align.mp4",
+    videoSrcFallback: "/media/1.%20auto-align-web.mp4",
+    posterSrc: "/media/screenshotMS/3.png",
   },
   {
     id: "partial-align",
@@ -178,6 +182,8 @@ export const FEATURE_SHOWCASE: FeatureShowcase[] = [
       ja: "補正したい範囲を選択して、その領域だけを独立して位置合わせできます。シートの異なる箇所が別々に改訂された図面にも対応。",
     },
     videoSrc: "/media/2.%20partial%20align.mp4",
+    videoSrcFallback: "/media/2.%20partial%20align-web.mp4",
+    posterSrc: "/media/screenshotMS/4.png",
   },
   {
     id: "cloudmark",
@@ -190,6 +196,8 @@ export const FEATURE_SHOWCASE: FeatureShowcase[] = [
       ja: "REVIFF が変更領域を検出し、建築・建設図面で標準的な雲マークを自動で描画。見落としなく、そのまま提出できる形で出力されます。",
     },
     videoSrc: "/media/3.%20cloudmark.mp4",
+    videoSrcFallback: "/media/3.%20cloudmark-web.mp4",
+    posterSrc: "/media/screenshotMS/2.png",
   },
 ];
 
