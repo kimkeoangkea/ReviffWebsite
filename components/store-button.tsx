@@ -10,7 +10,28 @@ interface StoreButtonProps {
   className?: string;
 }
 
+const UNAVAILABLE_COPY = {
+  label: { en: "Available Soon", ja: "近日配信予定" },
+  hint: { en: "Coming to Microsoft Store", ja: "Microsoft Store で近日配信" },
+} as const;
+
 export function StoreButton({ locale, label, hint, className = "" }: StoreButtonProps) {
+  if (!PRODUCT.storeAvailable) {
+    return (
+      <button
+        type="button"
+        disabled
+        className={`focus-ring btn-primary btn-primary--unavailable ${className}`}
+      >
+        <ShoppingBag size={18} strokeWidth={2} />
+        <span>
+          <span>{t(locale, UNAVAILABLE_COPY.label)}</span>
+          <span className="btn-sub">{t(locale, UNAVAILABLE_COPY.hint)}</span>
+        </span>
+      </button>
+    );
+  }
+
   return (
     <a
       className={`focus-ring btn-primary ${className}`}

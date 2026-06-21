@@ -8,9 +8,10 @@ export const PRODUCT = {
   version: "1.0.0.0",
   siteUrl,
   releaseDate: "2026-06-18",
+  storeAvailable: false,
   storeUrl:
     process.env.NEXT_PUBLIC_MICROSOFT_STORE_URL ??
-    "https://apps.microsoft.com/detail/9NXXXXXXXXXX",
+    "https://apps.microsoft.com/detail/9NP4KTH0HHHJ",
   feedbackUrl:
     process.env.NEXT_PUBLIC_FEEDBACK_URL ??
     "https://docs.google.com/forms/d/e/1FAIpQLSeMMP2qF1hmb0sEt3IOFetuyUciCNjrxQSjEx4Nt_4449Dw2g/viewform?usp=dialog",

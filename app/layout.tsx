@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { IBM_Plex_Mono, Noto_Sans_JP, Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import "@/app/globals.css";
 import { PRODUCT, SEO } from "@/lib/product";
 
@@ -72,6 +73,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} ${notoSansJp.variable}`}>
         {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-YV1LWREYY5"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YV1LWREYY5');
+          `}
+        </Script>
       </body>
     </html>
   );

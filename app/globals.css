@@ -237,6 +237,15 @@ a {
   transform: translateY(-1px);
 }
 
+.btn-primary--unavailable {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.btn-primary--unavailable:hover {
+  transform: none;
+}
+
 .btn-secondary {
   border: 1px solid var(--border-strong);
   color: var(--text-secondary);
