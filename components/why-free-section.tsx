@@ -23,8 +23,8 @@ export function WhyFreeSection({ locale }: { locale: Locale }) {
             </p>
             <p>
               {locale === "ja"
-                ? "意図的に無料で提供しています。サブスクリプションもサインアップもプレミアム枠も透かしもなく、目的は研究と AEC コミュニティへの実用的な価値であり、収益ではありません。比較は 100% ローカルで動くため、維持すべきクラウド基盤のコストもありません。"
-                : "It stays free on purpose. No subscription, no signup, no premium tier, and no watermark — the goal is research and practical value for the AEC community, not revenue. Because comparison runs 100% locally, there is also no cloud infrastructure to fund."}
+                ? "コア比較ツールは無料です。サインアップもなく、透かしもなく、目的は研究と AEC コミュニティへの実用的な価値です。比較は 100% ローカルで動くため、クラウド基盤も関与していません。"
+                : "The core comparison tool is free. No signup, no watermark — the goal is research and practical value for the AEC community. Because comparison runs 100% locally, there is also no cloud infrastructure involved."}
             </p>
             <p className="why-free-split__note">
               {locale === "ja"
