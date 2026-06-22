@@ -8,7 +8,7 @@ export const PRODUCT = {
   version: "1.0.0.0",
   siteUrl,
   releaseDate: "2026-06-18",
-  storeAvailable: false,
+  storeAvailable: true,
   tagline: {
     en: "Local PDF & drawing comparison for architects",
     ja: "建築のためのローカル PDF・図面比較",
