@@ -7,7 +7,7 @@ export const PRODUCT = {
   publisher: "AEC DX Labs",
   version: "1.0.0.0",
   siteUrl,
-  releaseDate: "2026-06-18",
+  releaseDate: "2026-06-22",
   storeAvailable: true,
   tagline: {
     en: "Local PDF & drawing comparison for architects",

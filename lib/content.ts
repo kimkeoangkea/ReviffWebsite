@@ -270,7 +270,7 @@ export const CHANGELOG: ChangelogEntry[] = [
   {
     id: "v1-0-0-0",
     version: "REVIFF v1.0.0.0",
-    date: "2026-06-18",
+    date: "2026-06-22",
     label: { en: "First Store release", ja: "初回 Store リリース" },
     summary: {
       en: "The first REVIFF release moves the drawing comparison workflow into a Store-first Windows app with stronger alignment, comparison, cloud mark styling, and update foundations.",
