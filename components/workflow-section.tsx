@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FEATURE_SHOWCASE } from "@/lib/content";
 import type { Locale } from "@/lib/locale";
 import { t } from "@/lib/locale";
@@ -10,14 +10,38 @@ function FeatureVideo({ src, srcFallback, poster }: {
   srcFallback: string;
   poster: string;
 }) {
-  const [errored, setErrored] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  // 0 = primary (AV1), 1 = fallback (H.264), >=2 = give up -> poster.
+  const [sourceIndex, setSourceIndex] = useState(0);
 
-  if (errored) {
+  const sources = [src, srcFallback];
+  const activeSrc = sources[sourceIndex];
+  const exhausted = sourceIndex >= sources.length;
+
+  // Reset to the primary source whenever inputs change (e.g. soft-nav re-render).
+  useEffect(() => {
+    setSourceIndex(0);
+  }, [src, srcFallback]);
+
+  // Deterministically re-run resource selection + autoplay after each commit
+  // where the chosen source changes. Replaces unreliable declarative <source>
+  // selection during React reconciliation on client-side route changes.
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el || activeSrc == null) return;
+    el.load();
+    void el.play().catch(() => {}); // autoplay promise can reject; swallow it.
+  }, [activeSrc]);
+
+  if (exhausted) {
     return <img src={poster} alt="" style={{ display: "block", width: "100%", height: "auto" }} />;
   }
 
   return (
     <video
+      ref={videoRef}
+      key={activeSrc}
+      src={activeSrc}
       autoPlay
       muted
       loop
@@ -29,11 +53,8 @@ function FeatureVideo({ src, srcFallback, poster }: {
       controlsList="nodownload nofullscreen noplaybackrate noremoteplayback"
       tabIndex={-1}
       aria-hidden="true"
-      onError={() => setErrored(true)}
-    >
-      <source src={src} type='video/mp4; codecs="av01.0.08M.08"' />
-      <source src={srcFallback} type='video/mp4; codecs="avc1.64001F"' />
-    </video>
+      onError={() => setSourceIndex((i) => i + 1)}
+    />
   );
 }
 
@@ -66,7 +87,6 @@ export function WorkflowSection({ locale }: { locale: Locale }) {
               </div>
               <div className="workflow-story__image">
                 <FeatureVideo
-                  key={`${feature.id}-${locale}`}
                   src={feature.videoSrc}
                   srcFallback={feature.videoSrcFallback}
                   poster={feature.posterSrc}
