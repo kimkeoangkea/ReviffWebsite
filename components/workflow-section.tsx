@@ -66,6 +66,7 @@ export function WorkflowSection({ locale }: { locale: Locale }) {
               </div>
               <div className="workflow-story__image">
                 <FeatureVideo
+                  key={`${feature.id}-${locale}`}
                   src={feature.videoSrc}
                   srcFallback={feature.videoSrcFallback}
                   poster={feature.posterSrc}
