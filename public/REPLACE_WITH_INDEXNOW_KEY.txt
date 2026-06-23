@@ -1,0 +1,9 @@
+PLACEHOLDER — NOT A REAL INDEXNOW KEY
+
+Do not deploy this file as-is. See docs/discovery-checklist.md for how to
+generate a real IndexNow key, what to name this file, and what to put inside it.
+
+When set up correctly:
+- The filename is <your-key>.txt (e.g. 8charsorMore-hex-key.txt).
+- The file's only contents are the key itself, matching the filename.
+- It is served at https://reviff.com/<your-key>.txt

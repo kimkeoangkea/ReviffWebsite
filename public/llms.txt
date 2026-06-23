@@ -30,9 +30,16 @@ PDF plus PNG, JPG, JPEG, BMP, GIF, TIF, and TIFF images.
 - Home (English): https://reviff.com/
 - Home (Japanese): https://reviff.com/ja
 - Download: https://reviff.com/download
+- Compare hub: https://reviff.com/compare
+- REVIFF vs Bluebeam Revu: https://reviff.com/compare/bluebeam-revu
 - Changelog: https://reviff.com/changelog
 - Privacy: https://reviff.com/privacy
 - Support: https://reviff.com/support
+
+## Important clarification
+- REVIFF is not a complete replacement for the broader Bluebeam Revu platform.
+- The comparison page primarily evaluates Bluebeam Revu's desktop Compare Documents workflow, not every capability of the wider Bluebeam platform.
+- AEC DX Labs and Bluebeam are not affiliated.
 
 ## Contact
 - Email: hello@aecdxlabs.com
