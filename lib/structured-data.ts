@@ -1,3 +1,5 @@
+import { COMPARISON } from "@/lib/comparison";
+import { COMPARISON_INTRO, COMPARISON_QA } from "@/lib/comparison-content";
 import { FAQ } from "@/lib/content";
 import type { Locale } from "@/lib/locale";
 import { t } from "@/lib/locale";
@@ -77,6 +79,48 @@ export function faqSchema(locale: Locale): Schema {
       acceptedAnswer: {
         "@type": "Answer",
         text: t(locale, item.answer),
+      },
+    })),
+  };
+}
+
+/**
+ * WebPage schema for the REVIFF vs Bluebeam Revu comparison page.
+ * `dateModified` comes from the human-maintained verification date, never the
+ * build time, so it only changes after a real re-check (brief §6, §24).
+ */
+export function comparisonWebPageSchema(locale: Locale, route: string): Schema {
+  const url = `${PRODUCT.siteUrl}${route}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: t(locale, COMPARISON_INTRO.title),
+    description: t(locale, COMPARISON_INTRO.lead),
+    url,
+    inLanguage: locale === "ja" ? "ja-JP" : "en-US",
+    datePublished: COMPARISON.publishedDate,
+    dateModified: COMPARISON.lastVerifiedDate,
+    publisher: { "@id": ORG_ID },
+    about: { "@type": "SoftwareApplication", name: PRODUCT.name },
+  };
+}
+
+/**
+ * FAQ schema built only from the comparison Q&A. Kept separate from the
+ * homepage FAQ (faqSchema) so the two never overlap or duplicate (brief §6).
+ * Every question/answer here is rendered visibly on the comparison page.
+ */
+export function comparisonFaqSchema(locale: Locale): Schema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    inLanguage: locale === "ja" ? "ja-JP" : "en-US",
+    mainEntity: COMPARISON_QA.map((item) => ({
+      "@type": "Question",
+      name: t(locale, item.question),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `${t(locale, item.answer)} ${t(locale, item.detail)}`,
       },
     })),
   };

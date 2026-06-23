@@ -28,6 +28,8 @@ export const PRODUCT = {
     changelog: "/changelog",
     privacy: "/privacy",
     support: "/support",
+    compare: "/compare",
+    compareBluebeam: "/compare/bluebeam-revu",
   },
   requirements: {
     system: {
@@ -74,6 +76,7 @@ export interface NavItem {
 export const NAV_ITEMS: NavItem[] = [
   { id: "download", label: { en: "Download", ja: "ダウンロード" }, href: PRODUCT.routes.download },
   { id: "why-free", label: { en: "Why Free", ja: "無料の理由" }, href: "/#why-its-free" },
+  { id: "compare", label: { en: "Compare", ja: "比較" }, href: PRODUCT.routes.compare },
   { id: "changelog", label: { en: "Changelog", ja: "更新履歴" }, href: PRODUCT.routes.changelog },
   { id: "support", label: { en: "Support", ja: "サポート" }, href: PRODUCT.routes.support },
   { id: "privacy", label: { en: "Privacy", ja: "プライバシー" }, href: PRODUCT.routes.privacy },

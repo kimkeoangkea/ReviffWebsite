@@ -1,5 +1,9 @@
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { COMPARISON_LINKS } from "@/lib/comparison-content";
 import type { Locale } from "@/lib/locale";
+import { localizePath, t } from "@/lib/locale";
+import { PRODUCT } from "@/lib/product";
 
 export function WhyFreeSection({ locale }: { locale: Locale }) {
   return (
@@ -41,6 +45,13 @@ export function WhyFreeSection({ locale }: { locale: Locale }) {
                 {locale === "ja" ? "元のプロジェクトを見る" : "Explore the original project"}
                 <ArrowUpRight size={15} strokeWidth={2.2} />
               </a>
+              <Link
+                className="btn-secondary focus-ring"
+                href={localizePath(locale, PRODUCT.routes.compareBluebeam)}
+              >
+                {t(locale, COMPARISON_LINKS.fromHome.label)}
+                <ArrowUpRight size={15} strokeWidth={2.2} />
+              </Link>
             </div>
           </div>
         </div>
